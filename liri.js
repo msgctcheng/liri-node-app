@@ -20,6 +20,20 @@ var spotify = new Spotify(spotkey);
 var Twitter = require("twitter");
 var client = new Twitter(twitkey);
 
+function searchSpot() {
+    spotify.search({ type: "track", query: '"'+ searchQ +'"'}).then( function(response) { 
+        console.log("Track:         " + response.tracks.items[0].name);
+        console.log(" ");
+        console.log("Artist(s):     " + response.tracks.items[0].album.artists[0].name);
+        console.log(" ");
+        console.log("Preview URL:   " + response.tracks.items[0].preview_url);
+        console.log(" ");
+        console.log("Album:         " + response.tracks.items[0].album.name);
+        console.log(" ");
+        }).catch( function(err) {
+            console.log(err);
+        });
+    }
  
 
 if (operation === "my-tweets") {
@@ -41,15 +55,8 @@ else if (operation === "spotify-this-song") {
     if (searchQ == "") {
             searchQ = "The Sign";
     }
-    
-    spotify.search({ type: "track", query: '"'+ searchQ +'"'}).then( function(response) { 
-        console.log("Track:         " + response.tracks.items[0].name);
-        console.log("Artist(s):     " + response.tracks.items[0].album.artists[0].name);
-        console.log("Preview URL:   " + response.tracks.items[0].preview_url);
-        console.log("Album:         " + response.tracks.items[0].album.name);
-        }).catch( function(err) {
-            console.log(err);
-        });
+   
+    searchSpot();
     
 }
 else if (operation === "movie-this") {
@@ -80,7 +87,17 @@ else if (operation === "movie-this") {
     }); 
 }
 else if (operation === "do-what-it-says") {
-    
+   
+        fs.readFile("random.txt", "utf8", function (error, data) {
+           searchQ = data.split(",").slice(1).join("+");
+           
+           operation = '"'+ data.split(",").slice(0, 1).join(" ")+'"';
+           
+           searchSpot()
+
+         
+            
+        });
 }
 else {
     console.log("Not a valid operation! Please enter a valid operation.");
