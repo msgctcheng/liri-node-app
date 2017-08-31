@@ -49,7 +49,7 @@ function runAll() {
             screen_name: searchQ
         }, function (error, tweet, response) {
             if (!error) {
-                for (var i = 0; i < 20; i++) {
+                for (var i = 0; i < tweet.length; i++) {
                     console.log("Tweet " + (i + 1) + ":  " + "'" + tweet[i].text + "' - " + tweet[i].created_at);
                     console.log(" ");
                 }
