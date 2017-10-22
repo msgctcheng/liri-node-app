@@ -1,5 +1,5 @@
 # "Language Interpretation and Recognition Interface" (LIRI) Node App
-             JavaScript | Node | Request - npm | twitter - npm | node-spotify-api - npm
+                     JavaScript | Node | Request - npm | twitter - npm | node-spotify-api - npm
 
 * The LIRI App is a Terminal/Bash based Node app that accepts several arguments when it is executed by `node liri.js`.
 
