@@ -5,7 +5,7 @@
 
 * Arguments & Examples:
 
-    * node liri.js my-tweets` - Uses the "twitter" npm package to pull the last twenty tweets from my twitter "https://twitter.com/PandaOfEvil"
+    * `node liri.js my-tweets` - Uses the "twitter" npm package to pull the last twenty tweets from my twitter "https://twitter.com/PandaOfEvil"
 
     ![alt text](https://i.imgur.com/Zy2HNxz.png)
 
