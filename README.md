@@ -2,7 +2,7 @@
                          JavaScript | Node | Request - npm | twitter - npm | node-spotify-api - npm
 
 * The LIRI App is a Terminal/Bash based Node app that accepts several arguments when it is executed by `node liri.js`.
-<br />
+
 * Arguments & Examples:
 
     * `node liri.js my-tweets` - Uses the "twitter" npm package to pull the last twenty tweets from my twitter "https://twitter.com/PandaOfEvil"
