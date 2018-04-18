@@ -59,7 +59,7 @@ function runAll() {
         });
     } else if (operation === "spotify-this-song") {
         if (searchQ == "") {
-            searchQ = "The Sign";
+            searchQ = "Mr. Crowley";
         }
 
         searchSpot();
